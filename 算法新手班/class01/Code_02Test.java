@@ -1,8 +1,8 @@
 package class01;
 
 public class Code_02Test {
-    //ÌâÄ¿£º
-    //¼ÆËã1£¡+2£¡+3£¡+4£¡+¡£¡£¡£¡£¡£+N£¡µÄ½á¹û
+    //é¢˜ç›®ï¼š
+    //è®¡ç®—1ï¼+2ï¼+3ï¼+4ï¼+ã€‚ã€‚ã€‚ã€‚ã€‚+Nï¼çš„ç»“æœ
     public static long method1(int N){
         long ans = 0;
         for(int i=1;i<=N;i++){
@@ -19,8 +19,8 @@ public class Code_02Test {
     }
 
     public static long method2(int N){
-        long ans  = 0;//×ÜºÍ
-        long temp = 1;//Ã¿Ò»¸ö£¡²ãµÄÖµ
+        long ans  = 0;//æ€»å’Œ
+        long temp = 1;//æ¯ä¸€ä¸ªï¼å±‚çš„å€¼
         for(int i=1;i<=N;i++){
             temp = temp * i;
             ans = ans + temp;
