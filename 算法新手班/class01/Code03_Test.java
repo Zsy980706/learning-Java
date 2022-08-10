@@ -2,22 +2,22 @@ package class01;
 
 public class Code03_Test {
     /**
-     * Ñ¡ÔñÅÅĞò
+     * é€‰æ‹©æ’åº
      * {x,5,7,3}
-     * ÏÈÑ¡³ö×îĞ¡µÄ£¬(0,N-1)×îĞ¡µÄ·ÅÔÚ0£¬(1,N-1)×îĞ¡µÄ·ÅÔÚ1£¬
-     * Äã±ÈÎÒĞ¡£¬ÔÛÁ©»»
+     * å…ˆé€‰å‡ºæœ€å°çš„ï¼Œ(0,N-1)æœ€å°çš„æ”¾åœ¨0ï¼Œ(1,N-1)æœ€å°çš„æ”¾åœ¨1ï¼Œ
+     * ä½ æ¯”æˆ‘å°ï¼Œå’±ä¿©æ¢
      */
 
     public static void selectionSort(int[] arr){
         if (arr == null || arr.length < 2) {
             return;
         }
-        for(int i=0;i<arr.length-1;i++){//Ñ­»·µ½µ¹ÊıµÚ¶ş¸ö
+        for(int i=0;i<arr.length-1;i++){//å¾ªç¯åˆ°å€’æ•°ç¬¬äºŒä¸ª
             int minIndex = i;
-            for(int j =i+1;j<arr.length;j++){//Ñ­»·µ½µ¹ÊıµÚÒ»¸ö
-                    if(arr[j]<arr[minIndex]){
-                        minIndex = j;
-                    }
+            for(int j =i+1;j<arr.length;j++){//å¾ªç¯åˆ°å€’æ•°ç¬¬ä¸€ä¸ª
+                if(arr[j]<arr[minIndex]){
+                    minIndex = j;
+                }
             }
             swap(arr,i,minIndex);
         }

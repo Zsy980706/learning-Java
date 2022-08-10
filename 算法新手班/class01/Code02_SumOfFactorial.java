@@ -1,8 +1,8 @@
 package class01;
 
 public class Code02_SumOfFactorial {
-	//ÌâÄ¿£º
-	//¼ÆËã1£¡+2£¡+3£¡+4£¡+¡£¡£¡£¡£¡£+N£¡µÄ½á¹û
+	//é¢˜ç›®ï¼š
+	//è®¡ç®—1ï¼+2ï¼+3ï¼+4ï¼+ã€‚ã€‚ã€‚ã€‚ã€‚+Nï¼çš„ç»“æœ
 	public static long f1(int N) {
 		long ans = 0;
 		for (int i = 1; i <= N; i++) {
