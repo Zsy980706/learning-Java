@@ -1,8 +1,8 @@
 package class01;
 
 public class Code_01Test {
-    //Î»ÔËËãÏà¹Ø
-    //´òÓ¡intÊý×Ö32½øÖÆÊý
+    //ä½è¿ç®—ç›¸å…³
+    //æ‰“å°intæ•°å­—32è¿›åˆ¶æ•°
     public static void print(int num){
         for(int i = 31;i>=0;i--){
             System.out.print( (num & (1<<i)) ==0?"0":"1");
@@ -18,7 +18,7 @@ public class Code_01Test {
         print(8);
         print(5&8);
         print(5|8);
-        print(5^8);//ÏàÍ¬Îª0²»Í¬Îª1£¬Òì»ò
+        print(5^8);//ç›¸åŒä¸º0ä¸åŒä¸º1ï¼Œå¼‚æˆ–
 
     }
 
