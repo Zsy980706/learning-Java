@@ -2,10 +2,20 @@ package class03;
 
 import java.util.Arrays;
 
+/**
+ * 找>=num的最左位置
+ * [1,2,2,2,3,4,5,6,7,8]
+ * num=2,返回arr[1]
+ * arr[1,1,1,2,2,2,3,4,4,5,5,6] 0~11
+ * 取t=5，arr[5]=2,取0~4中间arr[2]=1<2,t不更新
+ * 取3~4，arr[3]=2>=2,t=3
+ * 总的来说就是二分到死，往左砍
+ */
 public class Code02_BSNearLeft {
 
 	// arr有序的，>=num 最左
 	public static int mostLeftNoLessNumIndex(int[] arr, int num) {
+		//判断边界条件
 		if (arr == null || arr.length == 0) {
 			return -1;
 		}
@@ -14,10 +24,15 @@ public class Code02_BSNearLeft {
 		int ans = -1;
 		while (L <= R) {
 			int mid = (L + R) / 2;
+			//如果中间数大于num
 			if (arr[mid] >= num) {
+				//t赋值
 				ans = mid;
+				//右边界往左砍
 				R = mid - 1;
 			} else {
+				//中间数小于num
+				//左边界往右砍
 				L = mid + 1;
 			}
 		}
