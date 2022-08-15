@@ -3,6 +3,27 @@ package class04;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 本文件写的是单双链表反转
+ *
+ * 单链表、双链表
+ * |。。。|地址|（next）单链表
+ *
+ * |。。。|地址|（last）双链表
+ *       |地址|（next）
+ *
+ * a --> b --> c --> d --> null 单向链表
+ * head引用就是头节点指向a,b的next节点指向c,d的next节点指向null
+ * JVM虚拟机会规定哪个地址作为null,d的next节点就指向这个地址
+ * 			||
+ * 		    ||反转、逆序
+ * 		    ||
+ * d --> c --> b --> a --> null
+ * 如果head还指向a，那么就直接找null,bcd节点就不会被找到，
+ * 那么就会被JVM释放掉，认为是垃圾空间（因为JVM可达性）
+ * 所以 Head = f(Head) 返回新head
+ *
+ */
 public class Code01_ReverseList {
 
 	public static class Node {
@@ -24,6 +45,25 @@ public class Code01_ReverseList {
 		}
 	}
 
+	/**
+	 * 1.单链表反转
+	 * a --> b --> c --> d --> null
+	 * head指向a，pre,next为null
+	 * 当head不为空时，
+	 * 第一步
+	 * next节点记录head的下一个节点，防止a节点指向null时，找不到下一个节点了
+	 * 头节点a的next指针指向null(pre),
+	 * pre赋值为a节点，方便后续节点的next指针指向前一个指针，
+	 * 头节点移动到next节点指向的节点上
+	 *
+	 * 第二步
+	 * next去c
+	 * b指针指向pre(a)
+	 * pre赋值成b
+	 * head去C
+	 * @param head
+	 * @return
+	 */
 	public static Node reverseLinkedList(Node head) {
 		Node pre = null;
 		Node next = null;
@@ -36,6 +76,24 @@ public class Code01_ReverseList {
 		return pre;
 	}
 
+	/**
+	 * 2.双链表反转
+	 * -->代表next指针   ~~>代表last指针
+	 * 			a --> b --> c -> null
+	 * null <~~ a <~~ b <~~ c
+	 * head指向a，如果head不为空
+	 * 第一步
+	 * next指向下一个next节点，
+	 * a的next指针指向空（pre），a的last指针指向b(next)
+	 * pre指向a，head指向下一个
+	 * 第二步
+	 * next指向下一个(c)
+	 * b的next指针指向pre(a),last指针指向next(c)
+	 * pre指向head(b),head指向next（c）
+	 *
+	 * @param head
+	 * @return
+	 */
 	public static DoubleNode reverseDoubleList(DoubleNode head) {
 		DoubleNode pre = null;
 		DoubleNode next = null;
