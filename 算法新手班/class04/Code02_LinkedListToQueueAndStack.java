@@ -4,6 +4,11 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
+/**
+ * 用单链表结构实现队列和栈
+ * 队列：先进显出
+ * 栈：先进后出，弹出，弹夹结构
+ */
 public class Code02_LinkedListToQueueAndStack {
 
 	public static class Node<V> {
@@ -16,6 +21,21 @@ public class Code02_LinkedListToQueueAndStack {
 		}
 	}
 
+	/**
+	 * poll：将首个元素从队列中弹出，如果队列是空的，就返回null
+	 * peek：查看首个元素，不会移除首个元素，如果队列是空的就返回null
+	 *
+	 * 1.单链表结构实现队列，
+	 * head头 tail尾 size长度
+	 * ①offer:空的，进3，先建立3的节点，if（head,tail都是空，就说明3是第一个进来的元素）
+	 * 		头尾指针都指向3
+	 * ②进0 建立0的单节点，头尾不空，有前辈	，tail指向0
+	 * ③进4 建立4单节点，有前辈，tail指4
+	 *
+	 * 如果弹出：
+	 * 从head弹出，poll()head指向下一个，原来的headJVM可达性回收
+	 * @param <V>
+	 */
 	public static class MyQueue<V> {
 		private Node<V> head;
 		private Node<V> tail;
