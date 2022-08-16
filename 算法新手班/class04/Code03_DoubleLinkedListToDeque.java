@@ -3,6 +3,14 @@ package class04;
 import java.util.Deque;
 import java.util.LinkedList;
 
+/**
+ * 用双链表实现双端队列，时间复杂度：o(1)
+ * 双链表：Deque
+ * 头尾都可以进出，单链表实现不了，单链表只支持头部加减进出，
+ * 尾部不行，因为找不到last,只能遍历，但是这样时间复杂度就不是o(1)常数级了
+ *
+ *
+ */
 public class Code03_DoubleLinkedListToDeque {
 
 	public static class Node<V> {
@@ -17,6 +25,23 @@ public class Code03_DoubleLinkedListToDeque {
 		}
 	}
 
+	/**
+	 * 1.双链表实现双端队列
+	 * pushHead头进，pushTail尾进，pollHead头出，pollTail尾出
+	 * 设定参数head tail size
+	 * 用头进，头出举例
+	 * 第一步：头进，pushHead
+	 * ①如果栈为空，第一个进来的节点head,tail都指向它
+	 * ②如果头不为空，新入节点next指针指向当前head节点
+	 * 当前head节点last指针指向新入节点
+	 * head挪到新入节点
+	 *
+	 * 第二步：头出，pollHead，
+	 * ①如果head节点为空，返回null
+	 * ②不为空，如果head=tail，即栈内只有一个节点，head,tail都赋值null
+	 * ③head到下一个节点，下一个节点的last指针指向null,原来的head节点取出，并JVM可达性回收
+	 * @param <V>
+	 */
 	public static class MyDeque<V> {
 		private Node<V> head;
 		private Node<V> tail;

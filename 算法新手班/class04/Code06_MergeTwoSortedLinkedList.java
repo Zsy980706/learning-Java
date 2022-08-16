@@ -1,5 +1,24 @@
 package class04;
 
+/**
+ * 两个有序链表合并
+ * 13357
+ * 22337
+ * 122333357
+ *
+ * 例子：
+ * 	1-->	5-->	7-->
+ * 	2-->	6-->	9-->
+ * 	①确认head节点（谁头节点值小就是谁）
+ * 	（head）1-->	5-->	7-->
+ * 		   2-->	6-->	9-->
+ * 	②cur1设定为head的下一个节点，cur2就是另一边的第一个节点呗
+ * 	（head）1-->	（cur1）5-->	7-->
+ * 	(cur2)2-->	6-->	9-->
+ * 	pre指向头节点就是最小的那个节点
+ * 	③cur1 cur2谁小，pre往下动到谁身上，同时pre动之前节点的next 指针也指向下个节点
+ *
+ */
 // 测试链接：https://leetcode.com/problems/merge-two-sorted-lists
 public class Code06_MergeTwoSortedLinkedList {
 
