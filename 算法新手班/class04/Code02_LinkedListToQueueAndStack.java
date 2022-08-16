@@ -25,7 +25,7 @@ public class Code02_LinkedListToQueueAndStack {
 	 * poll：将首个元素从队列中弹出，如果队列是空的，就返回null
 	 * peek：查看首个元素，不会移除首个元素，如果队列是空的就返回null
 	 *
-	 * 1.单链表结构实现队列，
+	 * 1.单链表结构实现队列，先进先出
 	 * head头 tail尾 size长度
 	 * ①offer:空的，进3，先建立3的节点，if（head,tail都是空，就说明3是第一个进来的元素）
 	 * 		头尾指针都指向3
@@ -92,6 +92,17 @@ public class Code02_LinkedListToQueueAndStack {
 
 	}
 
+	/**
+	 * 2.单链表结构实现栈，先进后出
+	 * 只需要一个变量，tail都不用了
+	 * head指针直接指向最新进栈的节点就行
+	 * ①进2，head --> 2 --> null
+	 * ②进3，head --> 3 --> 2 --> null
+	 * ③进4，head --> 4 --> 3 --> 2 --> null
+	 * 进栈H向上走，出栈H向下走
+	 *
+	 * @param <V>
+	 */
 	public static class MyStack<V> {
 		private Node<V> head;
 		private int size;
