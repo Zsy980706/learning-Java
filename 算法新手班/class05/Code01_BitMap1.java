@@ -4,6 +4,13 @@ import java.util.HashSet;
 
 // 这个类的实现是错误的
 // 请问为什么？
+
+/**
+ * 因为 1 和 1L 的区别
+ * 在左移的时候，
+ * 1<<42 是错误的，因为认为1是int，只有32位
+ * 1L<<42
+ */
 public class Code01_BitMap1 {
 
 	public static class BitMap {
